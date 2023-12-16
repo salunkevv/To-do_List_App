@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <img src="./rocket.svg" alt="rocket">
+        <img src="./todo.svg" alt="todo">
+    </nav>
+    <main>
+        <div class="div">
+            <form id="form">
+                <input type="text" name="search" id="search" placeholder="Task name" required>&nbsp;
+                <input type="text" name="date" id="date" placeholder="Due date" onblur="this.type='text'"
+                    onfocus="this.type='date'" required>&nbsp;
+                <select name="prio" id="prio">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>&nbsp;&nbsp;
+                <button type="submit" id="addbtn">Add &nbsp;<i class="fa-sharp fa-regular fa-plus plus"></i></button>
+            </form>
+            <div id="filterdiv">
+                <select name="filter" id="filter" onchange="filterfunc()">
+                    <option value="none">Filter</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+        </div>
+        <div class="first">
+            <div class="first-left">
+                <span>To Do List</span>
+                <span class="todoleft">0</span>
+            </div>
+            <div class="first-right">
+                <span>High Priority</span>
+                <span class="todoright">0</span>
+            </div>
+        </div>
+        <div id="addtask">
+            <div id="empty">
+                <i class="fa-regular fa-clipboard clip"></i>
+                <h2>You have no To do Items As of now</h2>
+            </div>
+            <div id="todocard"><!--Here we add card dynamically-->
+                <!-- <div class="card">
+                    <div class="carddiv">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, voluptate. Voluptatum,
+                            amet
+                            quia itaque id ipsa perferendis excepturi sequi adipisci.</p>
+                        <div class="icons">
+                            <i class="fa-regular fa-pen-to-square edit"></i>&nbsp;&nbsp;&nbsp;
+                            <i class="fa-solid fa-trash delete"></i>
+                        </div>
+                    </div>
+                    <span id="carddate">2023-12-12</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="second">
+            <div class="second-left">
+                <span>Started</span>
+                <span class="todoleft">0</span>
+            </div>
+            <div class="second-right">
+                <span>High Priority</span>
+                <span class="todoright">0</span>
+            </div>
+        </div><br>
+        <div class="third">
+            <div class="third-left">
+                <span>Completed </span>
+                <span class="todocomplete">0</span>
+            </div>
+            <div class="third-right">
+                <span>High Priority</span>
+                <span class="todoright">0</span>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
